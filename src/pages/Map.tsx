@@ -97,7 +97,9 @@ export const MapPage = (): JSX.Element => {
         ]}
       >
         <Map
-          mapStyle="https://raw.githubusercontent.com/hc-oss/maplibre-gl-styles/master/styles/osm-mapnik/v8/default.json"
+          mapStyle="/map/styles/default.json"
+          minZoom={10}
+          maxZoom={17}
           // onClick={(e) => {
           //   const waypoint = new Protobuf.Waypoint({
           //     name: "test",
@@ -114,10 +116,12 @@ export const MapPage = (): JSX.Element => {
           maxPitch={0}
           dragRotate={false}
           touchZoomRotate={false}
+
           initialViewState={{
-            zoom: 10,
-            latitude: -38,
-            longitude: 145
+            zoom: 13,
+            // Center of Fehraltorf, Russikon, Pfäffikon and Hittnau
+            latitude: 47.380617,
+            longitude: 8.787803
           }}
         >
           {waypoints.map((wp) => (
